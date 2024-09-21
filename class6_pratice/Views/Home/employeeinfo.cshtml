@@ -1,0 +1,84 @@
+﻿@model class6_pratice.Models.Employe
+
+@{
+    ViewData["Title"] = "employeeinfo";
+}
+
+<h1 class="alert alert-primary">Employee Information </h1>
+<h3 class="alert alert-danger" id="show">@ViewBag.msg</h3>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="employeeinfo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="emplyeeName" class="control-label"></label>
+                <input asp-for="emplyeeName" class="form-control" />
+                <span asp-validation-for="emplyeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="designation" class="control-label"></label>
+                <input asp-for="designation" class="form-control" />
+                <span asp-validation-for="designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="birthdate" class="control-label"></label>
+                <input asp-for="birthdate" class="form-control" />
+                <span asp-validation-for="birthdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="joindate" class="control-label"></label>
+                <input asp-for="joindate" class="form-control" />
+                <span asp-validation-for="joindate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone" class="control-label"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="website" class="control-label"></label>
+                <input asp-for="website" class="form-control" />
+                <span asp-validation-for="website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salary" class="control-label"></label>
+                <input asp-for="salary" class="form-control" />
+                <span asp-validation-for="salary" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isemplyee" /> @Html.DisplayNameFor(model => model.isemplyee)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-success">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   
+</div>
+
+@section Scripts {
+    @*  @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}*@
+<script>
+    $(document).ready(function () {
+        $("#show").fadeOut(5000);
+    });
+</script>
+}
